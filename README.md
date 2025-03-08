@@ -1,8 +1,10 @@
 # Vision-Language Model IP Protection via Prompt-based Learning
 
-Code release for "Vision-Language Model IP Protection via Prompt-based Learning" (CVPR2025 2024)
+Code release for "Vision-Language Model IP Protection via Prompt-based Learning" (CVPR 2025)
 
 ## Paper
+
+<div align=center><img src="https://github.com/LyWang12/CUTI-Domain/blob/main/Figure/1.png" width="100%"></div>
 
 <div align=center><img src="https://github.com/LyWang12/IP-CLIP/blob/main/Figure/1.pdf" width="100%"></div>
 
