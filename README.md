@@ -4,7 +4,7 @@ Code release for "Vision-Language Model IP Protection via Prompt-based Learning"
 
 ## Paper
 
-<div align=center><img src="./Figures/1.pdf" width="100%"></div>
+<div align=center><img src="./Figure/1.pdf" width="100%"></div>
 
 [Vision-Language Model IP Protection via Prompt-based Learning](https://arxiv.org/abs/2503.02393) 
 (CVPR2025 22024)
