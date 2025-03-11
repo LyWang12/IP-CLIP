@@ -49,6 +49,16 @@ Applicability Authorization by IP-CLIP
 python Authorization/train.py
 ```
 
+## Citation
+If you find this code useful for your research, please cite our [paper](https://arxiv.org/abs/2503.02393):
+```
+@article{wang2025vision,
+  title={Vision-Language Model IP Protection via Prompt-based Learning},
+  author={Wang, Lianyu and Wang, Meng and Fu, Huazhu and Zhang, Daoqiang},
+  journal={arXiv preprint arXiv:2503.02393},
+  year={2025}
+}
+```
 
 ## Contact
 If you have any problem about our code, feel free to contact
