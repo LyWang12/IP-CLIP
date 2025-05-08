@@ -31,5 +31,5 @@ MODEL:
     NAME: "ViT-L/14"
 
 TRAINER:
-  ADCLIPL14:
+  IPCLIPL14:
     PREC: "amp"
