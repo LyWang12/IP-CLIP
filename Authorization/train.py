@@ -10,9 +10,9 @@ from dassl.data.datasets import VisDA17
 from dassl.data.datasets import OfficeHome
 from dassl.data.datasets import miniDomainNet
 
-import trainers.adclip_rn50
-import trainers.adclip_vitB16
-import trainers.adclip_vitL14
+import trainers.ipclip_rn50
+import trainers.ipclip_vitB16
+import trainers.ipclip_vitL14
 
 
 def print_args(args, cfg):
@@ -80,14 +80,14 @@ def extend_cfg(cfg):
     cfg.MODEL.BACKBONE.PATH = "./assets"
 
 
-    cfg.TRAINER.ADCLIPRN50 = CN()
-    cfg.TRAINER.ADCLIPRN50.PREC = "amp"  # fp16, fp32, amp
+    cfg.TRAINER.IPCLIPRN50 = CN()
+    cfg.TRAINER.IPCLIPRN50.PREC = "amp"  # fp16, fp32, amp
 
-    cfg.TRAINER.ADCLIPB16 = CN()
-    cfg.TRAINER.ADCLIPB16.PREC = "amp"  # fp16, fp32, amp
+    cfg.TRAINER.IPCLIPB16 = CN()
+    cfg.TRAINER.IPCLIPB16.PREC = "amp"  # fp16, fp32, amp
 
-    cfg.TRAINER.ADCLIPL14 = CN()
-    cfg.TRAINER.ADCLIPL14.PREC = "amp"  # fp16, fp32, amp
+    cfg.TRAINER.IPCLIPL14 = CN()
+    cfg.TRAINER.IPCLIPL14.PREC = "amp"  # fp16, fp32, amp
 
 
 def setup_cfg(args):
@@ -153,7 +153,7 @@ if __name__ == "__main__":
     parser.add_argument("--transforms", type=str, nargs="+", help="data augmentation methods")
     parser.add_argument("--config-file", type=str, default="configs/trainer/vitB16.yaml", help="path to config file")
     parser.add_argument("--dataset-config-file", type=str, default="configs/datasets/officehomeA.yaml", help="path to config file for dataset setup",)
-    parser.add_argument("--trainer", type=str, default="ADCLIPB16", help="name of trainer")
+    parser.add_argument("--trainer", type=str, default="IPCLIPB16", help="name of trainer")
     parser.add_argument("--backbone", type=str, default="", help="name of CNN backbone")
     parser.add_argument("--head", type=str, default="", help="name of head")
     parser.add_argument("--eval-only", action="store_true", help="evaluation only")
