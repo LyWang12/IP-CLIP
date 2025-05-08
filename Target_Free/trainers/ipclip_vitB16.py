@@ -425,9 +425,9 @@ class entropy_loss(nn.Module):
 
 
 @TRAINER_REGISTRY.register()
-class ADCLIPB16(TrainerXU):
+class IPCLIPB16(TrainerXU):
     def check_cfg(self, cfg):
-        assert cfg.TRAINER.ADCLIPB16.PREC in ["fp16", "fp32", "amp"]
+        assert cfg.TRAINER.IPCLIPB16.PREC in ["fp16", "fp32", "amp"]
 
     def build_model(self):
         cfg = self.cfg
@@ -438,7 +438,7 @@ class ADCLIPB16(TrainerXU):
         clip_model = load_clip_to_cpu(cfg)
         self.dim = clip_model.text_projection.shape[1]
 
-        if cfg.TRAINER.ADCLIPB16.PREC == "fp32" or cfg.TRAINER.ADCLIPB16.PREC == "amp":
+        if cfg.TRAINER.IPCLIPB16.PREC == "fp32" or cfg.TRAINER.IPCLIPB16.PREC == "amp":
             # CLIP's default precision is fp16
             clip_model.float()
 
@@ -492,7 +492,7 @@ class ADCLIPB16(TrainerXU):
         self.register_model("prompt_learner", self.model.prompt_learner,
                             self.optim, self.sched)
 
-        self.scaler = GradScaler() if cfg.TRAINER.ADCLIPB16.PREC == "amp" else None  # 自动混合精度训练（Automatic Mixed Precision, AMP）
+        self.scaler = GradScaler() if cfg.TRAINER.IPCLIPB16.PREC == "amp" else None  # 自动混合精度训练（Automatic Mixed Precision, AMP）
         self.construct_bank()
 
         device_count = torch.cuda.device_count()
@@ -634,7 +634,7 @@ class ADCLIPB16(TrainerXU):
         kl_loss = nn.KLDivLoss(reduction="batchmean")
         image_s, label_s, image_t, label_t = self.parse_batch_train(batch_s, batch_t)
 
-        prec = self.cfg.TRAINER.ADCLIPB16.PREC
+        prec = self.cfg.TRAINER.IPCLIPB16.PREC
         if prec == "amp":
             with autocast():
                 source_logits, target_logits, inter_s_logits, inter_t_logits, source_domaintokens, target_domaintokens, source_text_features, target_text_features = self.model(image_s, image_t)
