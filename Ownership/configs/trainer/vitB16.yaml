@@ -31,5 +31,5 @@ MODEL:
     NAME: "ViT-B/16"
 
 TRAINER:
-  ADCLIPB16:
+  IPCLIPB16:
     PREC: "amp"
