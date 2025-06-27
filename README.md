@@ -8,7 +8,7 @@ Code release for "Vision-Language Model IP Protection via Prompt-based Learning"
 
 
 [Vision-Language Model IP Protection via Prompt-based Learning](https://arxiv.org/abs/2503.02393) 
-(CVPR2025 2024)
+(CVPR2025)
 
 We propose IP-CLIP,  a lightweight ntellectual property (IP) protection strategy tailored to CLIP to protect Vision-Language Models.
 
